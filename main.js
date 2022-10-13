@@ -106,6 +106,7 @@ function isSame(inPuzzle1, inPuzzle2){
     return true;
 }
 
+//function to print puzzle in a nice way
 function print(inPuzzle, puzzleName){
     let printStr = '';
     let count1 = 0;
