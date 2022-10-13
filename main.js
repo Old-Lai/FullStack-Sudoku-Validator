@@ -106,7 +106,40 @@ function isSame(inPuzzle1, inPuzzle2){
     return true;
 }
 
+function print(inPuzzle, puzzleName){
+    let printStr = '';
+    let count1 = 0;
+    let count2 = 0;
+    console.log('----------' + puzzleName + '----------')
+    for(let row = 0; row < inPuzzle.length; row++){
+        let rowArr = getRow(inPuzzle, row);
+        for(let i = 0; i < inPuzzle[0].length; i++){
+            count2++;
+            printStr += rowArr[i] + ' ';
+            if(count2 === 3){
+                printStr += ' ';
+                count2 = 0;
+            }
+        }
+        if(count1 === 3){
+            console.log('\n');
+            count1 = 0;
+        }
+        console.log(printStr);
+        printStr = ''
+        count1++;
+    }
+    console.log('------------------------------')
+}
+
 //Where we actually call the functions
+//print(puzzle, 'puzzle');
+//print(puzzleCopy, 'puzzleCopy');
+//print(p8zzle, 'p8zzle');
+console.log('----------sudokuIsValid test----------')
 console.log(sudokuIsValid(puzzle));
+console.log(sudokuIsValid(puzzleCopy));
+console.log(sudokuIsValid(p8zzle));
+console.log('----------isSame test----------')
 console.log(isSame(puzzle, puzzleCopy));
 console.log(isSame(puzzle, p8zzle));
